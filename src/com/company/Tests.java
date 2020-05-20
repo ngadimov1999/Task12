@@ -2,7 +2,6 @@ package com.company;
 
 import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class Tests {
 
@@ -15,11 +14,6 @@ public class Tests {
     public void isNull(){
         String example = null;
         Assert.assertNotNull(Integer.decode(example));
-    }
-    @Test(expected = NullPointerException.class)
-    public void isNotNull(){
-        int a = 1;
-        Assert.assertNotNull(a);
     }
 
     @Test(expected = NumberFormatException.class)
@@ -61,6 +55,6 @@ public class Tests {
 
     @Test
     public void isSizeNotSame(){
-        Assert.assertEquals(Integer.SIZE, Integer.decode("99").intValue());
+        Assert.assertNotEquals(Integer.SIZE, Integer.decode("99").intValue());
     }
 }
